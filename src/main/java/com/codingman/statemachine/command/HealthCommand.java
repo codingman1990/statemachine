@@ -26,7 +26,7 @@ public class HealthCommand {
         return "FAIL";
     }
 
-    @ShellMethod("damage")
+    @ShellMethod("attack")
     public long attack(long damage) {
         long blood = health.accumulateAndGet(damage, (left, right) -> left - right < 0 ? 0 : left - right);
         if (blood == 0) {
